@@ -1,4 +1,7 @@
 io-bench
 ========
 
-A micro benchmark system for storage device such as flash SSD, which using \emph{raw} IO to by-pass the operating system cache and file system buffer in the kernel, and obtain the real performance of the storage device. It supports multi-threads, so it can simulate single or multiple outstanding IOs with various access sequences. It can also be fed with real storage trace. The  synthetic access pattern can be generated such as the access addresses with different strides or access addresses following different distribution laws such as Poisson distribution and Zipf distribution.
+A micro benchmark system for storage device such as flash SSD, which uses direct IO to by-pass operating system cache and file system buffer, and obtains real performance of the storage device. It simulates multiple outstanding IOs by multi-threading with various access sequences.
+
+I benchmarked several SSDs from Mtron, Intel, and OCZ with this program. Results are here: 
+http://www.tkl.iis.u-tokyo.ac.jp/~yongkun/paper/ieice-yongkun-wang-final.pdf
