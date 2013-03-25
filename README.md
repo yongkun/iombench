@@ -1,4 +1,4 @@
-io-bench
+iobench
 ========
 
 A micro benchmark system for storage device such as hard disk and flash SSD. It uses direct IO to by-pass operating system cache and file system buffer, to obtain real performance of the storage device. It simulates multiple outstanding IOs by multi-threading with various access sequences.
