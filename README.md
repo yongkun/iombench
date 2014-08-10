@@ -107,9 +107,11 @@ OPTIONS
 There are two scripts to help you plot the figures.
 
 `./plot_figures.sh` will run `iobench` and plot the basic performance results into figures with throughput or IOPS.
+
 ![iobench-seq-thrpt-480.png](sample/iobench-seq-thrpt-480.png)![iobench-rnd-iops-480.png](sample/iobench-rnd-iops-480.png)
 
 `./plot_details.sh` will run `iobench` and plot response time or IOPS or throughput for each request on a timeline. This helps to understand the performance consistency during long time test.
+
 ![iobench-time-detail.png](sample/iobench-time-detail.png)
 
 ##Why another micro benchmark tool?
