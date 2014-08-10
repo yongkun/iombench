@@ -22,6 +22,8 @@
 # This helps to understand the performance consistency during long time test
 # The standard deviation can also be plotted, will be added later.
 
+# plot script is generated in output directory with data, can be easily
+# customized to different figures.
 
 # test duration for each case, in second, the longer the better, 
 # especially for testing the write performance of SSD
@@ -34,6 +36,8 @@ if [ "$measure" = "" ]; then
 fi
 
 sector_num="8"
+
+other_iobench_opts=" -p ${sector_num} "
 
 basedir=`readlink -f $0 2>/dev/null| xargs dirname`
 if [ "$basedir" = "" ]; then
@@ -61,7 +65,7 @@ log_file="$output_dir/plot_details.log"
 
 echo "testing r50w50 ..." | tee -a $log_file
 output_file="$output_dir/io_detail_50r50w"
-$basedir/iobench -d ${duration:-10} -P -o $output_file -r -w 50 -p ${sector_num}
+$basedir/iobench -d ${duration:-10} -P -o $output_file -r -w 50 $other_iobench_opts
 sleep 1
 
 echo "collecting data ..." | tee -a $log_file

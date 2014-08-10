@@ -19,10 +19,14 @@
 # A demo script to run tests and plot figures for basic IO patterns including 
 # sequential/random read/write
 
+# plot script is generated in output directory with data, can be easily
+# customized to different figures.
 
 # test duration for each case, in second, the longer the better, 
 # especially for testing the write performance of SSD
 duration=$1
+
+other_iobench_opts=""
 
 basedir=`readlink -f $0 2>/dev/null | xargs dirname`
 if [ "$basedir" = "" ]; then
@@ -90,7 +94,7 @@ for rp in '' '-r'; do
 
         echo "-w $wp $rp -p $sector_num" | tee -a $log_file
 
-        $basedir/iobench -d ${duration:-2} -p $sector_num -o $output_file -w $wp $rp
+        $basedir/iobench -d ${duration:-2} -p $sector_num -o $output_file -w $wp $rp $other_iobench_opts
 
     done
 
