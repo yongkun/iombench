@@ -6,7 +6,7 @@ Features:
 
 - Various IO sequences including sequential/random reads/writes, and mixed IOs.
 - Multi-threading to simulate multiple outstanding IOs.
-- Synchronous IO by O_SYNC and O_DIRECT to bypass OS or file system buffers.
+- Using O_SYNC and O_DIRECT to try to bypass OS or file system buffer. Support raw IO on device file.
 - Automatically generate figures for latency, throughput and IOPS.
 
 Check the help to get more information.
@@ -38,11 +38,11 @@ DESCRIPTION
        iobench is a microbenchmark for storage systems or devices
        such as hard disk and flash SSD. It provides the following
        features:
-           - Synchronous IO by O_SYNC and O_DIRECT to try to bypass
-             OS or file system buffer.
-           - Multi-threading to simulate multiple outstanding IOs.
            - Various IO sequences including sequential/random
              reads/writes, and mixed IOs with any R/W ratio.
+           - Multi-threading to simulate multiple outstanding IOs.
+           - Using O_SYNC and O_DIRECT to try to bypass OS or file
+             system buffer. Support raw IO on device file.
        It is recommended to tune your devices/systems for prefetching
        or write-back cache with some tools like hdparm.
 
