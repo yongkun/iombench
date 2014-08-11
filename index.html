@@ -39,7 +39,7 @@
 <ul>
 <li>Various IO sequences including sequential/random reads/writes, and mixed IOs.</li>
 <li>Multi-threading to simulate multiple outstanding IOs.</li>
-<li>Synchronous IO by O_SYNC and O_DIRECT to bypass OS or file system buffers.</li>
+<li>Using O_SYNC and O_DIRECT to try to bypass OS or file system buffer. Support raw IO on device file.</li>
 <li>Automatically generate figures for latency, throughput and IOPS.</li>
 </ul><p>Check the help to get more information.</p>
 
@@ -71,11 +71,11 @@ DESCRIPTION
        iobench is a microbenchmark for storage systems or devices
        such as hard disk and flash SSD. It provides the following
        features:
-           - Synchronous IO by O_SYNC and O_DIRECT to try to bypass
-             OS or file system buffer.
-           - Multi-threading to simulate multiple outstanding IOs.
            - Various IO sequences including sequential/random
              reads/writes, and mixed IOs with any R/W ratio.
+           - Multi-threading to simulate multiple outstanding IOs.
+           - Using O_SYNC and O_DIRECT to try to bypass OS or file
+             system buffer. Support raw IO on device file.
        It is recommended to tune your devices/systems for prefetching
        or write-back cache with some tools like hdparm.
 
@@ -141,11 +141,11 @@ OPTIONS
 
 <p><code>./plot_figures.sh</code> will run <code>iobench</code> and plot the basic performance results into figures with throughput or IOPS.</p>
 
-<p><img src="https://raw.githubusercontent.com/yongkun/iobench/master/sample/iobench-seq-thrpt-480.png" alt="sample/iobench-seq-thrpt-480.png"><img src="https://raw.githubusercontent.com/yongkun/iobench/master/sample/iobench-rnd-iops-480.png" alt="sample/iobench-rnd-iops-480.png"></p>
+<p><img src="https://raw.githubusercontent.com/yongkun/iobench/master/sample/iobench-seq-thrpt-480.png" alt="iobench-seq-thrpt-480.png"><img src="https://raw.githubusercontent.com/yongkun/iobench/master/sample/iobench-rnd-iops-480.png" alt="iobench-rnd-iops-480.png"></p>
 
 <p><code>./plot_details.sh</code> will run <code>iobench</code> and plot response time or IOPS or throughput for each request on a timeline. This helps to understand the performance consistency during long time test.</p>
 
-<p><img src="https://raw.githubusercontent.com/yongkun/iobench/master/sample/iobench-time-detail.png" alt="sample/iobench-time-detail.png"></p>
+<p><img src="https://raw.githubusercontent.com/yongkun/iobench/master/sample/iobench-time-detail.png" alt="iobench-time-detail.png"></p>
 
 <h2>
 <a name="why-another-micro-benchmark-tool" class="anchor" href="#why-another-micro-benchmark-tool"><span class="octicon octicon-link"></span></a>Why another micro benchmark tool?</h2>
