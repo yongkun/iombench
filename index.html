@@ -1,35 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Iobench by yongkun</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <title>Iombench by yongkun</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Iobench</h1>
-        <p>A microbenchmark for storage systems or devices such as hard disk and flash SSD.</p>
+    <header>
+      <div class="inner">
+        <h1>Iombench</h1>
+        <h2>A microbenchmark for storage systems or devices such as hard disk and flash SSD.</h2>
+        <a href="https://github.com/yongkun/iombench" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
 
-        <p class="view"><a href="https://github.com/yongkun/iobench">View the Project on GitHub <small>yongkun/iobench</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/yongkun/iobench/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/yongkun/iobench/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/yongkun/iobench">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
-<a name="iobench" class="anchor" href="#iobench"><span class="octicon octicon-link"></span></a>iobench</h1>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="iombench" class="anchor" href="#iombench"><span class="octicon octicon-link"></span></a>iombench</h1>
 
 <h2>
 <a name="a-microbenchmark-for-storage-systems-or-devices-such-as-hard-disk-and-flash-ssd" class="anchor" href="#a-microbenchmark-for-storage-systems-or-devices-such-as-hard-disk-and-flash-ssd"><span class="octicon octicon-link"></span></a>A microbenchmark for storage systems or devices such as hard disk and flash SSD.</h2>
@@ -47,7 +47,7 @@
 <a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting started</h2>
 
 <p>Just type 
-<code>make</code> or <code>./compile.sh</code> to build it, then run <code>./iobench</code>, it will print messages about read and write latency of your current disk.</p>
+<code>make</code> or <code>./compile.sh</code> to build it, then run <code>./iombench</code>, it will print messages about read and write latency of your current disk.</p>
 
 <p>It is tested on Linux and Mac OS X.</p>
 
@@ -55,20 +55,20 @@
 
 <p>For more details, please see the help page.</p>
 
-<pre><code>$ ./iobench -h
+<pre><code>$ ./iombench -h
 
 NAME
-       iobench - microbenchmark for storage devices/systems
+       iombench - microbenchmark for storage devices/systems
 
 SYNOPSIS
-       iobench  [ -d time ] [ -f filename ] [ -n count ] [ -H ]
+       iombench  [ -d time ] [ -f filename ] [ -n count ] [ -H ]
                 [ -p size ] [ -o filename ] [ -P ] [ -r percent ]
                 [ -R time ] [ -s addr ] [ -S addr ] [ -t count ]
                 [ -w percent ]
-       iobench  -h
+       iombench  -h
 
 DESCRIPTION
-       iobench is a microbenchmark for storage systems or devices
+       iombench is a microbenchmark for storage systems or devices
        such as hard disk and flash SSD. It provides the following
        features:
            - Various IO sequences including sequential/random
@@ -139,13 +139,13 @@ OPTIONS
 
 <p>There are some scripts to help you plot the figures with gnuplot. Gnuplot script is generated in output directory with data, can be easily customized to different figures.</p>
 
-<p><code>./plot_figures.sh</code> will run <code>iobench</code> and plot the basic performance results into figures with throughput or IOPS.</p>
+<p><code>./plot_figures.sh</code> will run <code>iombench</code> and plot the basic performance results into figures with throughput or IOPS.</p>
 
-<p><img src="https://raw.githubusercontent.com/yongkun/iobench/master/sample/iobench-seq-thrpt-480.png" alt="iobench-seq-thrpt-480.png"><img src="https://raw.githubusercontent.com/yongkun/iobench/master/sample/iobench-rnd-iops-480.png" alt="iobench-rnd-iops-480.png"></p>
+<p><img src="https://raw.githubusercontent.com/yongkun/iombench/master/sample/iombench-seq-thrpt-480.png" alt="iombench-seq-thrpt-480.png"><img src="https://raw.githubusercontent.com/yongkun/iombench/master/sample/iombench-rnd-iops-480.png" alt="iombench-rnd-iops-480.png"></p>
 
-<p><code>./plot_details.sh</code> will run <code>iobench</code> and plot response time or IOPS or throughput for each request on a timeline. This helps to understand the performance consistency during long time test.</p>
+<p><code>./plot_details.sh</code> will run <code>iombench</code> and plot response time or IOPS or throughput for each request on a timeline. This helps to understand the performance consistency during long time test.</p>
 
-<p><img src="https://raw.githubusercontent.com/yongkun/iobench/master/sample/iobench-time-detail.png" alt="iobench-time-detail.png"></p>
+<p><img src="https://raw.githubusercontent.com/yongkun/iombench/master/sample/iombench-time-detail.png" alt="iombench-time-detail.png"></p>
 
 <h2>
 <a name="why-another-micro-benchmark-tool" class="anchor" href="#why-another-micro-benchmark-tool"><span class="octicon octicon-link"></span></a>Why another micro benchmark tool?</h2>
@@ -165,14 +165,26 @@ OPTIONS
 
 <p>You can find many good stuff and microbenchmark tools here:
 File and Storage System Benchmarking Portal <a href="http://fsbench.filesystems.org/">http://fsbench.filesystems.org/</a></p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/yongkun">yongkun</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/yongkun/iombench/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/yongkun/iombench/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/yongkun/iombench"></a> is maintained by <a href="https://github.com/yongkun">yongkun</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-              <script type="text/javascript">
+
+            <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
