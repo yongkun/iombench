@@ -573,7 +573,6 @@ void start_io_threads(void)
     g_tid = (pthread_t *)malloc(sizeof(pthread_t *) * thread_count);
     int i=0;
     for (i = 0; i < thread_count; i++) {
-        g_tid[i] = (pthread_t)malloc(sizeof(pthread_t));
         
         int ret = pthread_create(&g_tid[i], NULL, do_io, NULL);
         if (ret != 0) {
@@ -603,6 +602,9 @@ void start_io_threads(void)
         if (pthread_join(g_tid[i], NULL) != 0)
             perror("thread wait error.\n");
     }
+    
+    if (g_tid != NULL)
+        free(g_tid);
 }
 
 int main(int argc, char **argv)
