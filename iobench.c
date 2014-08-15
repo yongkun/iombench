@@ -49,7 +49,7 @@
 #include <libgen.h>
 #include <limits.h>
 
-void usage()
+void usage(void)
 {
     fprintf(stderr,
         "\n"
@@ -150,13 +150,13 @@ off_t seek_span = 16*1024*1024;
 int thread_count = 1;
 int write_percent = 50;
 
-void close_file()
+void close_file(void)
 {
     if (output_file != NULL)
         fclose(output_file);
 }
 
-void print_option_values()
+void print_option_values(void)
 {
     fprintf(GET_OUTPUT(output_file), "configuration: %s"
            "request_count %d , filename %s , %s"
@@ -412,7 +412,7 @@ inline off_t reposition_offset(int fd, long req_count)
     return offset;
 }
 
-inline int should_write()
+inline int should_write(void)
 {    
     int is_write = 1;
     if (write_percent == 0) {
@@ -567,7 +567,7 @@ void *do_io()
     return NULL;
 }
 
-void start_io_threads()
+void start_io_threads(void)
 {
     pthread_t *g_tid = NULL;
     g_tid = (pthread_t *)malloc(sizeof(pthread_t *) * thread_count);
@@ -598,7 +598,7 @@ void start_io_threads()
                 }
             }
         }        
-    }    
+    }
     for (i = 0; i< thread_count; i++) {
         if (pthread_join(g_tid[i], NULL) != 0)
             perror("thread wait error.\n");
