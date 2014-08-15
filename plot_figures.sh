@@ -26,7 +26,7 @@
 # especially for testing the write performance of SSD
 duration=$1
 
-other_iobench_opts=""
+other_iombench_opts=""
 
 basedir=`readlink -f $0 2>/dev/null | xargs dirname`
 if [ "$basedir" = "" ]; then
@@ -40,7 +40,7 @@ if hash "make" &> /dev/null; then
 elif hash "gcc" &> /dev/null; then
   ./compile.sh
 else
-  echo "Neither make nor gcc is found. Cannot compile iobench."
+  echo "Neither make nor gcc is found. Cannot compile iombench."
   exit
 fi
 
@@ -94,7 +94,7 @@ for rp in '' '-r'; do
 
         echo "-w $wp $rp -p $sector_num" | tee -a $log_file
 
-        $basedir/iobench -d ${duration:-2} -p $sector_num -o $output_file -w $wp $rp $other_iobench_opts
+        $basedir/iombench -d ${duration:-2} -p $sector_num -o $output_file -w $wp $rp $other_iombench_opts
 
     done
 
@@ -123,7 +123,7 @@ set ytics
 set key outside center top horizontal
 
 set ylabel "time (us)"
-set output "iobench-time.png"
+set output "iombench-time.png"
 plot \
 "$plot_data_file" u 1:3 t "seq_read" w linespoints lt 3 pt 1, \
 "$plot_data_file" u 1:2 t "seq_write" w linespoints lt 1 pt 2, \
@@ -143,13 +143,13 @@ set xtics nomirror ( \
 "128" 131072)
 
 set ylabel "Throughput (MB/s)"
-set output "iobench-seq-thrpt.png"
+set output "iombench-seq-thrpt.png"
 plot \
 "$plot_data_file" u 1:(\$1*1000000/\$3/1024/1024) t "seq_read" w linespoints lt 3 pt 1, \
 "$plot_data_file" u 1:(\$1*1000000/\$2/1024/1024) t "seq_write" w linespoints lt 1 pt 2
 
 set ylabel "IOPS"
-set output "iobench-rnd-iops.png"
+set output "iombench-rnd-iops.png"
 plot \
 "$plot_data_file" u 1:(1000000/\$5) t "rnd_read" w linespoints lt 3 pt 1, \
 "$plot_data_file" u 1:(1000000/\$4) t "rnd_write" w linespoints lt 1 pt 2

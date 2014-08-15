@@ -37,7 +37,7 @@ fi
 
 sector_num="8"
 
-other_iobench_opts=" -p ${sector_num} "
+other_iombench_opts=" -p ${sector_num} "
 
 basedir=`readlink -f $0 2>/dev/null| xargs dirname`
 if [ "$basedir" = "" ]; then
@@ -51,7 +51,7 @@ if hash "make" &> /dev/null; then
 elif hash "gcc" &> /dev/null; then
   ./compile.sh
 else
-  echo "Neither make nor gcc is found. Cannot compile iobench."
+  echo "Neither make nor gcc is found. Cannot compile iombench."
   exit
 fi
 
@@ -65,7 +65,7 @@ log_file="$output_dir/plot_details.log"
 
 echo "testing r50w50 ..." | tee -a $log_file
 output_file="$output_dir/io_detail_50r50w"
-$basedir/iobench -d ${duration:-10} -P -o $output_file -r -w 50 $other_iobench_opts
+$basedir/iombench -d ${duration:-10} -P -o $output_file -r -w 50 $other_iombench_opts
 sleep 1
 
 echo "collecting data ..." | tee -a $log_file
@@ -118,7 +118,7 @@ set ytics
 
 set key outside center top horizontal
 set ylabel "$y_label"
-set output "iobench-time-detail.png"
+set output "iombench-time-detail.png"
 
 set datafile separator ","
 
@@ -141,14 +141,14 @@ cd $output_dir && gnuplot $plot_cmd_file
 
 case `uname -s` in
   'Darwin')
-    open -a Preview "$output_dir/iobench-time-detail.png"
+    open -a Preview "$output_dir/iombench-time-detail.png"
     ;;
   'Linux')
     if ! hash "eog" &> /dev/null; then
       echo "eog not found. Please use your favorite tool to view figures. "
       exit
     fi
-    eog "$output_dir/iobench-time-detail.png" &
+    eog "$output_dir/iombench-time-detail.png" &
     ;;
   *)
     echo 'Unknown OS. Please use your favorite tool to view the figures.'

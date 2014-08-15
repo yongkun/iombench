@@ -1,4 +1,4 @@
-#iobench
+#iombench
 
 ##A microbenchmark for storage systems or devices such as hard disk and flash SSD.
 
@@ -13,7 +13,7 @@ Check the help to get more information.
 
 ##Getting started
 Just type 
-`make` or `./compile.sh` to build it, then run `./iobench`, it will print messages about read and write latency of your current disk.
+`make` or `./compile.sh` to build it, then run `./iombench`, it will print messages about read and write latency of your current disk.
 
 It is tested on Linux and Mac OS X.
 
@@ -22,20 +22,20 @@ Note that it is not recommended to use this tool on Mac OS X, because `O_DIRECT`
 For more details, please see the help page.
 
 ```
-$ ./iobench -h
+$ ./iombench -h
 
 NAME
-       iobench - microbenchmark for storage devices/systems
+       iombench - microbenchmark for storage devices/systems
 
 SYNOPSIS
-       iobench  [ -d time ] [ -f filename ] [ -n count ] [ -H ]
+       iombench  [ -d time ] [ -f filename ] [ -n count ] [ -H ]
                 [ -p size ] [ -o filename ] [ -P ] [ -r percent ]
                 [ -R time ] [ -s addr ] [ -S addr ] [ -t count ]
                 [ -w percent ]
-       iobench  -h
+       iombench  -h
 
 DESCRIPTION
-       iobench is a microbenchmark for storage systems or devices
+       iombench is a microbenchmark for storage systems or devices
        such as hard disk and flash SSD. It provides the following
        features:
            - Various IO sequences including sequential/random
@@ -106,13 +106,13 @@ OPTIONS
 
 There are some scripts to help you plot the figures with gnuplot. Gnuplot script is generated in output directory with data, can be easily customized to different figures.
 
-`./plot_figures.sh` will run `iobench` and plot the basic performance results into figures with throughput or IOPS.
+`./plot_figures.sh` will run `iombench` and plot the basic performance results into figures with throughput or IOPS.
 
-![iobench-seq-thrpt-480.png](sample/iobench-seq-thrpt-480.png)![iobench-rnd-iops-480.png](sample/iobench-rnd-iops-480.png)
+![iombench-seq-thrpt-480.png](sample/iombench-seq-thrpt-480.png)![iombench-rnd-iops-480.png](sample/iombench-rnd-iops-480.png)
 
-`./plot_details.sh` will run `iobench` and plot response time or IOPS or throughput for each request on a timeline. This helps to understand the performance consistency during long time test.
+`./plot_details.sh` will run `iombench` and plot response time or IOPS or throughput for each request on a timeline. This helps to understand the performance consistency during long time test.
 
-![iobench-time-detail.png](sample/iobench-time-detail.png)
+![iombench-time-detail.png](sample/iombench-time-detail.png)
 
 ##Why another micro benchmark tool?
 I want to understand the performance of disks by a very simple tool with easy customization. I developed this micro benchmark tool to understand the performance difference between hard disks and flash SSDs, which is very important for my papers and PhD dissertation. This tool also helps me validate benchmark results of other tools. The code here is a cleanup version. I hope it not only helps you understand the performance of storage systems, but also serves as an educational tool to show how to write a simple benchmark.

@@ -60,10 +60,10 @@ if hash "make" &> /dev/null; then
 elif hash "gcc" &> /dev/null; then
   ./compile.sh
 else
-  echo "Neither make nor gcc is found. Cannot compile iobench."
+  echo "Neither make nor gcc is found. Cannot compile iombench."
   exit
 fi
 
 # -p 2048, page size 1MB (2048x512)
-$basedir/iobench -w 100 -p 2048 -n $file_size -S 1000000000000 -f ${file_name:-testfile.tmp}
+$basedir/iombench -w 100 -p 2048 -n $file_size -S 1000000000000 -f ${file_name:-testfile.tmp}
 

@@ -1,5 +1,5 @@
 /*
- *   iobench.c
+ *   iombench.c
  *
  *   Copyright 2014 Yongkun Wang
  *
@@ -54,17 +54,17 @@ void usage(void)
     fprintf(stderr,
         "\n"
         "NAME\n"
-        "       iobench - microbenchmark for storage devices/systems\n"
+        "       iombench - microbenchmark for storage devices/systems\n"
         "\n"
         "SYNOPSIS\n"
-        "       iobench  [ -d time ] [ -f filename ] [ -n count ] [ -H ]\n"
+        "       iombench  [ -d time ] [ -f filename ] [ -n count ] [ -H ]\n"
         "                [ -p size ] [ -o filename ] [ -P ] [ -r percent ]\n"
         "                [ -R time ] [ -s addr ] [ -S addr ] [ -t count ]\n"
         "                [ -w percent ]\n"
-        "       iobench  -h\n"
+        "       iombench  -h\n"
         "\n"
         "DESCRIPTION\n"
-        "       iobench is a microbenchmark for storage systems or devices\n"
+        "       iombench is a microbenchmark for storage systems or devices\n"
         "       such as hard disk and flash SSD. It provides the following\n"
         "       features:\n"
         "           - Various IO sequences including sequential/random\n"
