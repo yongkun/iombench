@@ -120,6 +120,8 @@ I want to understand the performance of disks by a very simple tool with easy cu
 I benchmarked several SSDs from Mtron, Intel, and OCZ before. You can find the results here: 
 [http://www.tkl.iis.u-tokyo.ac.jp/~yongkun/paper/ieice-yongkun-wang-final.pdf]
 
+For more results, please see here: https://github.com/yongkun/iombench-results
+
 ##Contact
 yongkun at gmail.com
 
