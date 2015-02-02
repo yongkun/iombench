@@ -117,18 +117,6 @@ cat << EOF >> $output_dir/$plot_cmd_file
 set terminal png size 640,540
 
 set xlabel "Request Size (KB)"
-set grid ytics
-set ytics
-
-set key outside center top horizontal
-
-set ylabel "time (us)"
-set output "iombench-time.png"
-plot \
-"$plot_data_file" u 1:3 t "seq_read" w linespoints lt 3 pt 1, \
-"$plot_data_file" u 1:2 t "seq_write" w linespoints lt 1 pt 2, \
-"$plot_data_file" u 1:5 t "rnd_read" w linespoints lt 2 pt 3, \
-"$plot_data_file" u 1:4 t "rnd_write" w linespoints lt 4 pt 4
 
 set logscale x
 set xtics nomirror ( \
@@ -141,6 +129,19 @@ set xtics nomirror ( \
 "32" 32768,\
 "64" 65536,\
 "128" 131072)
+
+set grid ytics
+set ytics
+
+set key outside center top horizontal
+
+set ylabel "time (us)"
+set output "iombench-time.png"
+plot \
+"$plot_data_file" u 1:3 t "seq_read" w linespoints lt 3 pt 1, \
+"$plot_data_file" u 1:2 t "seq_write" w linespoints lt 1 pt 2, \
+"$plot_data_file" u 1:5 t "rnd_read" w linespoints lt 2 pt 3, \
+"$plot_data_file" u 1:4 t "rnd_write" w linespoints lt 4 pt 4
 
 set ylabel "Throughput (MB/s)"
 set output "iombench-seq-thrpt.png"
