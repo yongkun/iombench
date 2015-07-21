@@ -30,10 +30,7 @@
 duration=$1
 
 # time: plot response time (default), iops: plot IOPS, throughput: plot throughput (MB/s)
-measure=$2
-if [ "$measure" = "" ]; then
-  measure="time"
-fi
+measure=${2:-time}
 
 sector_num="8"
 
