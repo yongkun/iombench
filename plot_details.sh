@@ -123,8 +123,8 @@ set output "iombench-time-detail.png"
 set datafile separator ","
 
 plot \
-"$plot_data_file" u 1:$measure_r t "rnd_read" w points lt 3 pt 1, \
-"$plot_data_file" u 1:$measure_w t "rnd_write" w points lt 1 pt 2
+"$plot_data_file" u 1:$measure_r t "rnd-read" w points lt 3 pt 1, \
+"$plot_data_file" u 1:$measure_w t "rnd-write" w points lt 1 pt 2
 
 EOF
 

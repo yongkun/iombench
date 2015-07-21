@@ -146,14 +146,14 @@ plot \
 set ylabel "Throughput (MB/s)"
 set output "iombench-seq-thrpt.png"
 plot \
-"$plot_data_file" u 1:(\$1*1000000/\$3/1024/1024) t "seq_read" w linespoints lt 3 pt 1, \
-"$plot_data_file" u 1:(\$1*1000000/\$2/1024/1024) t "seq_write" w linespoints lt 1 pt 2
+"$plot_data_file" u 1:(\$1*1000000/\$3/1024/1024) t "seq-read" w linespoints lt 3 pt 1, \
+"$plot_data_file" u 1:(\$1*1000000/\$2/1024/1024) t "seq-write" w linespoints lt 1 pt 2
 
 set ylabel "IOPS"
 set output "iombench-rnd-iops.png"
 plot \
-"$plot_data_file" u 1:(1000000/\$5) t "rnd_read" w linespoints lt 3 pt 1, \
-"$plot_data_file" u 1:(1000000/\$4) t "rnd_write" w linespoints lt 1 pt 2
+"$plot_data_file" u 1:(1000000/\$5) t "rnd-read" w linespoints lt 3 pt 1, \
+"$plot_data_file" u 1:(1000000/\$4) t "rnd-write" w linespoints lt 1 pt 2
 
 EOF
 
