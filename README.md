@@ -118,7 +118,7 @@ There are some scripts to help you plot the figures with gnuplot. Gnuplot script
 I want to understand the performance of disks by a very simple tool with easy customization. I developed this micro benchmark tool to understand the performance difference between hard disks and flash SSDs, which is very important for my papers and PhD dissertation. This tool also helps me validate benchmark results of other tools. The code here is a cleanup version. I hope it not only helps you understand the performance of storage systems, but also serves as an educational tool to show how to write a simple benchmark.
 
 I benchmarked several SSDs from Mtron, Intel, and OCZ before. You can find the results here: 
-[http://www.tkl.iis.u-tokyo.ac.jp/~yongkun/paper/ieice-yongkun-wang-final.pdf]
+[https://sites.google.com/site/yongkun2010/publications/file-list/ieice-yongkun-wang-final.pdf]
 
 For more results, please see here: https://github.com/yongkun/iombench-results
 
