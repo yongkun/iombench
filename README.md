@@ -104,7 +104,7 @@ OPTIONS
 
 ```
 
-There are some scripts to help you plot the figures with gnuplot. Gnuplot script is generated in output directory with data, can be easily customized to different figures.
+There are some scripts to help you plot the figures with [gnuplot](http://www.gnuplot.info). Gnuplot script is generated in output directory with data even though gnuplot is not installed. You can copy the generated plot script to somewhere where gnpulot installed and customize it.
 
 `./plot_figures.sh` will run `iombench` and plot the basic performance results into figures with throughput or IOPS.
 
