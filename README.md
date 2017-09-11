@@ -1,6 +1,6 @@
-#iombench
+# iombench
 
-##A microbenchmark for storage systems or devices such as hard disk and flash SSD.
+## A microbenchmark for storage systems or devices such as hard disk and flash SSD.
 
 Features:
 
@@ -11,7 +11,8 @@ Features:
 
 Check the help to get more information.
 
-##Getting started
+## Getting started
+
 Just type 
 `make` or `./compile.sh` to build it, then run `./iombench`, it will print messages about read and write latency of your current disk.
 
@@ -114,7 +115,8 @@ There are some scripts to help you plot the figures with [gnuplot](http://www.gn
 
 ![iombench-time-detail.png](sample/iombench-time-detail.png)
 
-##Why another micro benchmark tool?
+## Why another micro benchmark tool?
+
 I want to understand the performance of disks by a very simple tool with easy customization. I developed this micro benchmark tool to understand the performance difference between hard disks and flash SSDs, which is very important for my papers and PhD dissertation. This tool also helps me validate benchmark results of other tools. The code here is a cleanup version. I hope it not only helps you understand the performance of storage systems, but also serves as an educational tool to show how to write a simple benchmark.
 
 I benchmarked several SSDs from Mtron, Intel, and OCZ before. You can find the results here: 
@@ -122,10 +124,11 @@ I benchmarked several SSDs from Mtron, Intel, and OCZ before. You can find the r
 
 For more results, please see here: https://github.com/yongkun/iombench-results
 
-##Contact
+## Contact
+
 yongkun at gmail.com
 
-##Misc
+## Misc
 
 You can find many good stuff and microbenchmark tools here:
 File and Storage System Benchmarking Portal http://fsbench.filesystems.org/
